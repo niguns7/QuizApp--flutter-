@@ -15,9 +15,15 @@ class MyApp extends StatelessWidget {
   void answerQuestion () {
     print("answer 1 choosed");
   }
+
+  
   //flutter need to extends either stateless or statefull widgits
   @override
   Widget build(BuildContext context) {
+    var questions = [
+      "what's your favourait actor?"
+      "what's genra of film you like?"
+    ];
     //build is the methode which flutter eill call to draw something tot he screen
     return MaterialApp(
       home: Scaffold(
