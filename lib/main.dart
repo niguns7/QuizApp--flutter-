@@ -12,8 +12,11 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
+  var questionIndex = 0;
+
   void answerQuestion () {
-    print("answer 1 choosed");
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
   }
 
   
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      "what's your favourait actor?"
+      "what's your favourait actor?",
       "what's genra of film you like?"
     ];
     //build is the methode which flutter eill call to draw something tot he screen
@@ -32,7 +35,9 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text("the question!!"),
+            Text(
+              questions[questionIndex]
+            ),
             ElevatedButton(
               onPressed: answerQuestion, //name of function instead the result
               child: Text('Answer 1'),
