@@ -13,7 +13,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
 
   void answerQuestion () {
-    print("the chooen answer");
+    print("answer 1 choosed");
   }
   //flutter need to extends either stateless or statefull widgits
   @override
@@ -32,16 +32,14 @@ class MyApp extends StatelessWidget {
               child: Text('Answer 1'),
             ),
             ElevatedButton(
-              onPressed: answerQuestion,
+              onPressed: () => print('Answer 2 choossed'),
               child: Text('Answer 2'),
             ),
             ElevatedButton(
-              onPressed: answerQuestion, 
+              onPressed: () {
+                print("answer 3 chooed");
+              }, 
               child: Text('Answer 3'),
-            ),
-            ElevatedButton(
-              onPressed: answerQuestion,
-              child: Text('Answer 4'),
             ),
           ],
         ),
