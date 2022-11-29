@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+//if we pass answerQuestion () that expect result of the function meanwhile in our function is a void type function so we onkly call its name
+
 class MyApp extends StatelessWidget {
+
+  void answerQuestion () {
+    print("the chooen answer");
+  }
   //flutter need to extends either stateless or statefull widgits
   @override
   Widget build(BuildContext context) {
@@ -22,19 +28,19 @@ class MyApp extends StatelessWidget {
           children: [
             Text("the question!!"),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion, //name of function instead the result
               child: Text('Answer 1'),
             ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion,
               child: Text('Answer 2'),
             ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion, 
               child: Text('Answer 3'),
             ),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion,
               child: Text('Answer 4'),
             ),
           ],
