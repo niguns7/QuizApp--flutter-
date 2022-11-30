@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './questions.dart';
+import './answer.dart';
 //void main () {
 //  runApp(MyApp()); //main function to show content on the screen
 //}
@@ -45,20 +46,9 @@ class _MyAppState extends State<MyApp> {
             Question(
               questions[_questionIndex],
             ),
-            ElevatedButton(
-              onPressed: _answerQuestion , //name of function instead the result
-              child: Text('Answer 1'),
-            ),
-            ElevatedButton(
-              onPressed: () => print('Answer 2 choossed'),
-              child: Text('Answer 2'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                print("answer 3 chooed");
-              }, 
-              child: Text('Answer 3'),
-            ),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
