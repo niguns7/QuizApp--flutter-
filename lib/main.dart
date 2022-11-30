@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './questions.dart';
 //void main () {
 //  runApp(MyApp()); //main function to show content on the screen
 //}
@@ -41,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(
+            Question(
               questions[_questionIndex],
             ),
             ElevatedButton(
