@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
   final String
-      questionText; //it could be changed internally so the final is added which tells dart that is will never change
+      questionText; //it could be changed internally so the final is added which tells dart that is will never change(run time constant value)
 
   Question(this.questionText);
   @override
