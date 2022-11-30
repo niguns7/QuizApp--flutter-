@@ -16,18 +16,18 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  var questionIndex = 0; 
+  var _questionIndex = 0; 
 
   var questions = [
       'what\'s your favourait color?',
       'what\'s your favourait animal?',
     ];
-  void answerQuestion () {
+  void _answerQuestion () {
     setState(() {
-      questionIndex= questionIndex + 1;
+      _questionIndex= _questionIndex + 1;
     });
    
-    print(questionIndex);
+    print(_questionIndex);
   }
   //flutter need to extends either stateless or statefull widgits
   @override
@@ -42,10 +42,10 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Text(
-              questions[questionIndex],
+              questions[_questionIndex],
             ),
             ElevatedButton(
-              onPressed: answerQuestion , //name of function instead the result
+              onPressed: _answerQuestion , //name of function instead the result
               child: Text('Answer 1'),
             ),
             ElevatedButton(
