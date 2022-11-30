@@ -7,26 +7,32 @@ import 'package:flutter/material.dart';
 //every widgit are the dart classes which at the end have build methode
 
 void main() => runApp(MyApp());
-
 //if we pass answerQuestion () that expect result of the function meanwhile in our function is a void type function so we onkly call its name
+class MyApp extends StatefulWidget {
 
-class MyApp extends StatelessWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
-  var questionIndex = 0;
+class _MyAppState extends State<MyApp> {
 
+  var questionIndex = 0; 
+
+  var questions = [
+      'what\'s your favourait color?',
+      'what\'s your favourait animal?',
+    ];
   void answerQuestion () {
-    questionIndex = questionIndex + 1;
+    setState(() {
+      questionIndex= questionIndex + 1;
+    });
+   
     print(questionIndex);
   }
-
-  
   //flutter need to extends either stateless or statefull widgits
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      "what's your favourait actor?",
-      "what's genra of film you like?"
-    ];
+  
     //build is the methode which flutter eill call to draw something tot he screen
     return MaterialApp(
       home: Scaffold(
@@ -36,10 +42,10 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             Text(
-              questions[questionIndex]
+              questions[questionIndex],
             ),
             ElevatedButton(
-              onPressed: answerQuestion, //name of function instead the result
+              onPressed: answerQuestion , //name of function instead the result
               child: Text('Answer 1'),
             ),
             ElevatedButton(
