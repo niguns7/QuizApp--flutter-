@@ -34,11 +34,15 @@ class _MyAppState extends State<MyApp> {
     },
   ];
   void _answerQuestion() {
+ 
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
 
     print(_questionIndex);
+       if (_questionIndex < questions.length) {
+        print("we have more quesstions");
+    }
   }
 
   //flutter need to extends either stateless or statefull widgits
