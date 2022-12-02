@@ -40,8 +40,10 @@ class _MyAppState extends State<MyApp> {
     });
 
     print(_questionIndex);
-       if (_questionIndex < questions.length) {
+       if (_questionIndex < questions.length) { 
         print("we have more quesstions");
+    } else {
+      print("we have no more quesstions");
     }
   }
 
@@ -54,7 +56,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('first app'),
         ),
-        body: Column(
+        body: _questionIndex < questions.length ? Column(
           children: [
             Question(
               // the passed index will forwarded to here
@@ -65,7 +67,7 @@ class _MyAppState extends State<MyApp> {
               return Answer(_answerQuestion, answer); //it passes the answer string to the Answer widget
             }).toList()
           ],
-        ),
+        ) : Center(child: Text('Quiz is finished'),)
       ),
     );
   }
