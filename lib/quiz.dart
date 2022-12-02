@@ -23,7 +23,7 @@ class Quiz extends StatelessWidget {
         ),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>) //question index set the index of the question and answer is keyy which gives the lis of answers
             .map((answer) {
-          return Answer(answerQuestion,
+          return Answer(() => answerQuestion (answer['Score ']), //it gets excuted when the button is pressed 
               answer['Text']); //it passes the answer string to the Answer widget
         }).toList()
       ],
