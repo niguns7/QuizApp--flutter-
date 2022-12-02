@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './questions.dart';
-import './answer.dart';
+import './quiz.dart';
+
 //void main () {
 //  runApp(MyApp()); //main function to show content on the screen
 //}
@@ -19,7 +19,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
-  static const questions = [
+  static const _questions = [
     {
       'questionText': 'what\'s your favourait color?',
       'answers': ['Black', 'Red', 'Blue', 'White']
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     print(_questionIndex);
-       if (_questionIndex < questions.length) { 
+       if (_questionIndex < _questions.length) { 
         print("we have more quesstions");
     } else {
       print("we have no more quesstions");
@@ -56,18 +56,10 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('first app'),
         ),
-        body: _questionIndex < questions.length ? Column(
-          children: [
-            Question(
-              // the passed index will forwarded to here
-              questions[_questionIndex]['questionText'], //accesing to a specific key & index of question
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>) //question index set the index of the question and answer is keyy which gives the lis of answers
-                .map((answer) {
-              return Answer(_answerQuestion, answer); //it passes the answer string to the Answer widget
-            }).toList()
-          ],
-        ) : Center(child: Text('Quiz is finished'),)
+        body: _questionIndex < _questions.length 
+        ? Quiz(answerQuestion: _answerQuestion,questionIndex: _questionIndex,questions: [],)
+        : Center(child: Text('Quiz is finished'),
+        ),
       ),
     );
   }
