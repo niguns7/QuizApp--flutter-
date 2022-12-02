@@ -21,11 +21,10 @@ class Quiz extends StatelessWidget {
           questions[questionIndex]
               ['questionText'], //accesing to a specific key & index of question
         ),
-        ...(questions[questionIndex]['answers'] as List<
-                String>) //question index set the index of the question and answer is keyy which gives the lis of answers
+        ...(questions[questionIndex]['answers'] as List<Map<String, Object>>) //question index set the index of the question and answer is keyy which gives the lis of answers
             .map((answer) {
           return Answer(answerQuestion,
-              answer); //it passes the answer string to the Answer widget
+              answer['Text']); //it passes the answer string to the Answer widget
         }).toList()
       ],
     );
